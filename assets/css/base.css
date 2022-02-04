@@ -1,0 +1,157 @@
+/* KHai baos biến */
+:root{
+    --primary-color:#ee4d2d;
+    --primary-color-rgba:rgb(238, 77, 45);
+    --white-color: #fff;
+    --black-color: |#000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+
+    --header-heigh: 120px;
+    --navbar-heigh: 34px; 
+    --header-with-search-height: calc(var(--header-heigh) - var(--navbar-heigh));
+    --star-gold-color: #FFCE3E;
+}
+
+*{
+    box-sizing: inherit;
+    /* inherit kế thừa các thẻ chứa nó */
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* =16px */
+    /* độ cao chữ mặc định */
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* Responsive sau này nhanh hơn */
+.grid{
+    width: 1200px;
+    /* chiều dài cứ nhầm nhó */
+    max-width: 100%;
+    margin: 0 auto;
+    
+    /* tự động căn giữa khi nằm trong 1 khối khác */
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+   
+}
+/* Test , khi nào làm responsive sẽ sửa*/
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+/* Animation */
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+/* Button style */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.4rem;
+   padding: 0;
+   /* bỏ đi padding mặc đinh của cái nút */
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   line-height: 1.6rem;
+}
+.btn.btn-nomal:hover{
+    opacity: 0.5;
+}
+/* phải là 1 element có cả 2 class mới được css */
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+
+}
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 5px;
+}
+/* Select */
+.select-input{
+    height: 34px;
+    padding: 0 5px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.select-input:hover .select-input__list{
+    display: block;
+}
+.select-input__label{
+    font-size: 1.4rem;
+}
+.select-input__icon{
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    
+    position: relative;
+    top: 1px;
+}
+.select-input__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 8px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+} 
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+}
+.select-input__link:hover{
+    color: var(--primary-color);
+
+}
